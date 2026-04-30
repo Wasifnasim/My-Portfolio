@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mohammad Wasifullah Nasim | Data Analyst & AI Student</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+:root{--orange:#ff7a00;--orange-soft:#ffb68b;--bg:#131313;--surface:#201f1f;--surface-high:#2a2a2a;--text:#e5e2e1;--text-muted:#a78b7c;--border:#3a3939;}
+*{box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{background-color:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--orange);border-radius:2px;}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+.hero-bg{background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(255,122,0,.08) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 20% 80%,rgba(255,122,0,.04) 0%,transparent 50%);}
+.btn-primary{background:var(--orange);color:#521a00;font-weight:700;padding:14px 36px;border-radius:6px;transition:all .2s;display:inline-flex;align-items:center;gap:8px;letter-spacing:.01em;font-size:15px;text-decoration:none;}
+.btn-primary:hover{background:#ff8f1f;box-shadow:0 0 30px rgba(255,122,0,.4);transform:translateY(-1px);}
+.btn-outline{border:1.5px solid rgba(229,226,225,.2);color:var(--text);font-weight:600;padding:14px 36px;border-radius:6px;transition:all .2s;display:inline-flex;align-items:center;gap:8px;font-size:15px;text-decoration:none;}
+.btn-outline:hover{border-color:var(--orange);color:var(--orange-soft);background:rgba(255,122,0,.06);}
+.nav-link{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#666;transition:color .2s;position:relative;text-decoration:none;}
+.nav-link:hover{color:var(--orange-soft);}
+.nav-link.active{color:var(--orange);}
+.nav-link.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--orange);border-radius:1px;}
+.section-label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);display:inline-flex;align-items:center;gap:8px;}
+.section-label::before{content:'';display:inline-block;width:20px;height:1px;background:var(--orange);}
+.progress-ring__circle{transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1);transform:rotate(-90deg);transform-origin:50% 50%;}
+.service-card{background:var(--surface);border:1px solid var(--border);padding:36px;transition:all .3s;position:relative;overflow:hidden;}
+.service-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,var(--orange),transparent);transform:scaleX(0);transition:transform .4s;}
+.service-card:hover{border-color:rgba(255,122,0,.4);background:#1a1918;}
+.service-card:hover::before{transform:scaleX(1);}
+.project-card{position:relative;overflow:hidden;background:var(--surface-high);border:1px solid var(--border);aspect-ratio:4/3;}
+.project-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.4,0,.2,1);}
+.project-card:hover img{transform:scale(1.08);}
+.project-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92) 0%,rgba(0,0,0,.4) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;transform:translateY(60%);transition:transform .4s cubic-bezier(.4,0,.2,1);}
+.project-card:hover .project-overlay{transform:translateY(0);}
+.tag{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);border:1px solid rgba(255,122,0,.35);padding:3px 10px;border-radius:3px;margin-bottom:8px;}
+.timeline-item{position:relative;padding-left:28px;border-left:1px solid var(--border);padding-bottom:36px;}
+.timeline-item::before{content:'';position:absolute;left:-5px;top:6px;width:8px;height:8px;background:var(--orange);border-radius:50%;border:2px solid var(--bg);}
+.timeline-item:last-child{padding-bottom:0;}
+.form-input{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;transition:border-color .2s;outline:none;}
+.form-input:focus{border-color:var(--orange);}
+.form-input::placeholder{color:#555;}
+.cert-card{background:var(--surface);border:1px solid var(--border);padding:20px 24px;border-radius:4px;transition:all .2s;display:flex;align-items:flex-start;gap:14px;}
+.cert-card:hover{border-color:rgba(255,122,0,.4);background:#1c1a18;}
+.filter-btn{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px 18px;border-radius:4px;border:1px solid var(--border);color:#888;transition:all .2s;cursor:pointer;background:transparent;}
+.filter-btn:hover,.filter-btn.active{border-color:var(--orange);color:var(--orange);background:rgba(255,122,0,.07);}
+.filter-btn.active{background:var(--orange);color:#521a00;font-weight:700;}
+.stat-num{font-size:36px;font-weight:900;line-height:1;color:var(--orange);letter-spacing:-.03em;}
+.float-badge{animation:floatY 3s ease-in-out infinite;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+@keyframes spin-slow{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.animate-spin-slow{animation:spin-slow 20s linear infinite;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.hero-text>*{opacity:0;animation:fadeUp .7s ease forwards;}
+.hero-text>*:nth-child(1){animation-delay:.1s;}
+.hero-text>*:nth-child(2){animation-delay:.25s;}
+.hero-text>*:nth-child(3){animation-delay:.4s;}
+.hero-text>*:nth-child(4){animation-delay:.55s;}
+.hero-text>*:nth-child(5){animation-delay:.7s;}
+</style>
+</head>
+<body>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(19,19,19,.88);backdrop-filter:blur(16px);border-bottom:1px solid #222;">
+  <nav style="display:flex;justify-content:space-between;align-items:center;padding:16px 5vw;">
+    <div style="font-family:'DM Mono',monospace;font-size:13px;letter-spacing:.1em;color:var(--orange);">WASIF<span style="color:#444;">.DEV</span></div>
+    <div style="display:none;" class="md-nav">
+      <a href="#home" class="nav-link active" style="margin:0 16px;">Home</a>
+      <a href="#services" class="nav-link" style="margin:0 16px;">Services</a>
+      <a href="#about" class="nav-link" style="margin:0 16px;">About</a>
+      <a href="#portfolio" class="nav-link" style="margin:0 16px;">Projects</a>
+      <a href="#contact" class="nav-link" style="margin:0 16px;">Contact</a>
+    </div>
+    <a href="mailto:iwasifnasim@gmail.com" class="btn-primary" style="padding:10px 22px;font-size:13px;">Hire Me</a>
+  </nav>
+</header>
+
+<style>
+@media(min-width:768px){.md-nav{display:flex!important;align-items:center;}}
+</style>
+
+<main style="overflow:hidden;">
+
+<!-- HERO -->
+<section class="hero-bg" style="padding:120px 5vw;display:flex;flex-direction:column-reverse;align-items:center;gap:64px;" id="home">
+<style>@media(min-width:768px){#hero-inner{flex-direction:row!important;} #hero-img-col{justify-content:flex-end!important;} .hero-bg{background:radial-gradient(ellipse 80% 60% at 90% 50%,rgba(255,122,0,.08) 0%,transparent 50%),radial-gradient(ellipse 50% 40% at 10% 80%,rgba(255,122,0,.04) 0%,transparent 50%)!important;}}</style>
+<div id="hero-inner" style="display:flex;flex-direction:column-reverse;align-items:center;gap:64px;width:100%;">
+  <div style="flex:1;" class="hero-text">
+    <div class="section-label" style="margin-bottom:20px;">AI & Data Science Student</div>
+    <h1 style="font-size:clamp(34px,5vw,62px);font-weight:900;line-height:1.08;letter-spacing:-.025em;color:var(--text);margin-bottom:20px;">
+      Hi, I'm<br>
+      <span style="color:var(--orange);">Mohammad<br>Wasifullah</span><br>
+      <span style="color:#444;">Nasim</span>
+    </h1>
+    <p style="font-size:16px;line-height:1.75;color:#a0927e;max-width:460px;margin-bottom:28px;">
+      Turning complex data into actionable insights. Passionate about Python, SQL, ML & dashboard building — pursuing B.Tech in AI & Data Science at Anjuman College, Nagpur.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px;">
+      <a href="mailto:iwasifnasim@gmail.com" class="btn-primary">
+        <span class="material-symbols-outlined" style="font-size:18px;">mail</span>Hire Me
+      </a>
+      <a href="Mohammad_Wasifullah_Nasim_Resume_.pdf" target="_blank" class="btn-outline">
+        Download CV<span class="material-symbols-outlined" style="font-size:18px;">download</span>
+      </a>
+    </div>
+    <div style="display:flex;gap:32px;flex-wrap:wrap;">
+      <div>
+        <div class="stat-num">2+</div>
+        <div style="font-size:11px;color:#555;margin-top:3px;letter-spacing:.07em;text-transform:uppercase;font-family:'DM Mono',monospace;">Internships</div>
+      </div>
+      <div style="width:1px;background:var(--border);"></div>
+      <div>
+        <div class="stat-num">5+</div>
+        <div style="font-size:11px;color:#555;margin-top:3px;letter-spacing:.07em;text-transform:uppercase;font-family:'DM Mono',monospace;">Projects</div>
+      </div>
+      <div style="width:1px;background:var(--border);"></div>
+      <div>
+        <div class="stat-num">8.13</div>
+        <div style="font-size:11px;color:#555;margin-top:3px;letter-spacing:.07em;text-transform:uppercase;font-family:'DM Mono',monospace;">SGPA Rank 1</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="hero-img-col" style="flex:1;display:flex;justify-content:center;align-items:center;">
+    <div class="float-badge" style="position:relative;">
+      <div class="animate-spin-slow" style="position:absolute;inset:-24px;border:1px dashed rgba(255,122,0,.2);border-radius:50%;"></div>
+      <div style="position:absolute;inset:-48px;border:1px solid rgba(255,122,0,.06);border-radius:50%;animation:spin-slow 35s linear infinite reverse;"></div>
+      <div style="width:320px;height:320px;border-radius:50%;border:3px solid var(--orange);overflow:hidden;position:relative;z-index:10;background:var(--surface-high);">
+        <img src="PIC.png"
+          alt="Mohammad Wasifullah Nasim" style="width:100%;height:100%;object-fit:cover;filter:grayscale(25%);transition:filter .6s;"
+          onmouseover="this.style.filter='grayscale(0)'" onmouseout="this.style.filter='grayscale(25%)'"/>
+      </div>
+      <div style="position:absolute;bottom:8px;right:-24px;background:var(--orange);color:#521a00;padding:10px 16px;border-radius:6px;z-index:20;font-weight:800;font-size:12px;letter-spacing:.05em;box-shadow:0 8px 24px rgba(255,122,0,.4);line-height:1.4;">
+        RANK #1<br><span style="font-weight:500;font-size:10px;">RTM Nagpur Univ.</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section style="padding:112px 5vw;" id="services">
+  <div style="text-align:center;margin-bottom:64px;">
+    <div class="section-label" style="justify-content:center;margin-bottom:12px;">What I offer</div>
+    <h2 style="font-size:38px;font-weight:800;letter-spacing:-.02em;margin-bottom:14px;">My Services</h2>
+    <p style="color:var(--text-muted);max-width:500px;margin:0 auto;font-size:16px;line-height:1.7;">Data-driven solutions built for real business impact.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+    <div class="service-card">
+      <div style="width:52px;height:52px;background:rgba(255,122,0,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:28px;">bar_chart</span>
+      </div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;">Data Analytics</h3>
+      <p style="color:#888;font-size:15px;line-height:1.7;">Statistical modeling and trend analysis using Python, SQL & Power BI to uncover hidden opportunities in datasets.</p>
+    </div>
+    <div class="service-card">
+      <div style="width:52px;height:52px;background:rgba(255,122,0,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:28px;">dashboard</span>
+      </div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;">Dashboard Design</h3>
+      <p style="color:#888;font-size:15px;line-height:1.7;">Creating compelling Power BI and Excel dashboards that convert raw data into business intelligence at a glance.</p>
+    </div>
+    <div class="service-card">
+      <div style="width:52px;height:52px;background:rgba(255,122,0,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:28px;">psychology</span>
+      </div>
+      <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;">Machine Learning</h3>
+      <p style="color:#888;font-size:15px;line-height:1.7;">Supervised & unsupervised learning, computer vision with YOLOv8, and real-world ML model implementation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section style="padding:112px 5vw;display:grid;grid-template-columns:1fr;gap:64px;align-items:center;" id="about">
+<style>@media(min-width:768px){#about{grid-template-columns:1fr 1fr!important;}}</style>
+  <div style="position:relative;">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJCb6o63RwRP69FPSSTYf3uRA8VjhIt5S7hoSmOiiElkctAm4Zf3sZ5pc38ie7zhlD_fcwafYOI1ihfJfgwgQayyVl-IEx1GMZiADDjona9fIiZ3ZHRANlwA8fr8MuUZXma0HH8qOJhfW2EOndXvesHSrG2489wCcthAEPbiSZIkF8798CRQ2_8je5djLB9TFgeE0CKcdwtkZ09r0HeiQ8keHbMLny16gs3wernYGtSMYHsqe4eiI6AHAgdqoesuOZp0CfBoakUg"
+      alt="Workspace" style="width:100%;height:400px;object-fit:cover;border-radius:6px;border:1px solid var(--border);"/>
+    <div style="position:absolute;bottom:-16px;left:-16px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px 20px;box-shadow:0 16px 40px rgba(0,0,0,.5);">
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--orange);letter-spacing:.1em;margin-bottom:4px;">CURRENTLY</div>
+      <div style="font-weight:700;font-size:13px;">B.Tech AI & Data Science</div>
+      <div style="font-size:12px;color:#666;margin-top:2px;">Anjuman College · 2023–2027</div>
+    </div>
+  </div>
+  <div>
+    <div class="section-label" style="margin-bottom:12px;">Who I am</div>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-.02em;margin-bottom:20px;">About Me</h2>
+    <p style="font-size:15px;color:#a0927e;line-height:1.8;margin-bottom:16px;">
+      I'm an AI & Data Science student at Anjuman College, Nagpur, with a strong passion for turning messy datasets into clean, meaningful stories. I've worked as a Trainee Data Analyst at <strong style="color:var(--orange-soft);">Codeflux</strong> and interned at <strong style="color:var(--orange-soft);">NU Intelligence</strong>, where I built real-world ML models and Power BI dashboards.
+    </p>
+    <p style="font-size:15px;color:#a0927e;line-height:1.8;margin-bottom:28px;">
+      Recognized as <strong style="color:var(--orange);">University Rank #1 holder</strong> with 8.13 SGPA at RTM Nagpur University in 2025. Beyond data, I enjoy poetry, gaming, and fitness.
+    </p>
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:18px;">verified</span>
+        <span style="font-size:14px;">University Rank #1 — 8.13 SGPA (RTM Nagpur University, 2025)</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:18px;">verified</span>
+        <span style="font-size:14px;">Certified via Tata, Deloitte Australia, GeeksforGeeks</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:18px;">verified</span>
+        <span style="font-size:14px;">Skills: ML, Power BI, Python, MySQL, YOLOv8, OpenCV</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:18px;">verified</span>
+        <span style="font-size:14px;">Seeking Data Science / Data Analysis internship</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="mailto:iwasifnasim@gmail.com" class="btn-primary">Contact Me</a>
+      <a href="https://www.linkedin.com/in/wasifnasim" target="_blank" class="btn-outline">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section style="padding:112px 5vw;" id="experience">
+  <div style="margin-bottom:56px;">
+    <div class="section-label" style="margin-bottom:12px;">Work History</div>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-.02em;">Experience & Education</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr;gap:48px;">
+  <style>@media(min-width:768px){#exp-grid{grid-template-columns:1fr 1fr!important;}}</style>
+  <div id="exp-grid" style="display:grid;grid-template-columns:1fr;gap:48px;">
+    <div>
+      <div style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#444;margin-bottom:24px;">Professional</div>
+      <div class="timeline-item">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px;">
+          <div style="font-weight:700;font-size:17px;">Trainee / Data Analyst</div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--orange);">Apr 2025 – Dec 2025</div>
+        </div>
+        <div style="color:var(--orange);font-size:13px;font-weight:600;margin-bottom:10px;">Codeflux Company</div>
+        <ul style="color:#888;font-size:14px;line-height:2;list-style:none;padding:0;">
+          <li style="display:flex;gap:8px;"><span style="color:var(--orange);">→</span>Managed analytics, growth strategies & tech branding</li>
+          <li style="display:flex;gap:8px;"><span style="color:var(--orange);">→</span>Conducted AI/ML workshops for students & professionals</li>
+          <li style="display:flex;gap:8px;"><span style="color:var(--orange);">→</span>Mentored peers in technical projects & collaborative learning</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px;">
+          <div style="font-weight:700;font-size:17px;">ML Intern</div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--orange);">Jan 2025 – Feb 2025</div>
+        </div>
+        <div style="color:var(--orange);font-size:13px;font-weight:600;margin-bottom:10px;">NU Intelligence Nagpur</div>
+        <ul style="color:#888;font-size:14px;line-height:2;list-style:none;padding:0;">
+          <li style="display:flex;gap:8px;"><span style="color:var(--orange);">→</span>Python training for ML applications</li>
+          <li style="display:flex;gap:8px;"><span style="color:var(--orange);">→</span>Supervised & unsupervised learning algorithms</li>
+          <li style="display:flex;gap:8px;"><span style="color:var(--orange);">→</span>Data preprocessing, cleaning & visualization for model building</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#444;margin-bottom:24px;">Education</div>
+      <div class="timeline-item">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:6px;">
+          <div style="font-weight:700;font-size:17px;">B.Tech — AI & Data Science</div>
+          <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--orange);">2023 – 2027</div>
+        </div>
+        <div style="color:var(--orange);font-size:13px;font-weight:600;margin-bottom:10px;">Anjuman College of Engineering & Technology</div>
+        <p style="color:#888;font-size:14px;line-height:1.7;">Pursuing B.Tech in AI & Data Science with focus on Machine Learning, Statistical Analysis, Python & Deep Learning.</p>
+      </div>
+      <div class="timeline-item">
+        <div style="font-weight:700;font-size:17px;margin-bottom:6px;">🏆 University Rank #1</div>
+        <div style="color:var(--orange);font-size:13px;font-weight:600;margin-bottom:10px;">RTM Nagpur University — 2025</div>
+        <p style="color:#888;font-size:14px;line-height:1.7;">Recognized for academic excellence with 8.13 SGPA at Rashtrasant Tukadoji Maharaj Nagpur University.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section style="padding:112px 5vw;" id="skills">
+  <div style="text-align:center;margin-bottom:64px;">
+    <div class="section-label" style="justify-content:center;margin-bottom:12px;">Technical Proficiency</div>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-.02em;">My Skills</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:40px 24px;" id="skills-grid">
+  <style>@media(min-width:640px){#skills-grid{grid-template-columns:repeat(3,1fr);}}@media(min-width:1024px){#skills-grid{grid-template-columns:repeat(5,1fr);}}</style>
+
+  <!-- Skill items -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:62.8;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">75%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">MySQL Analysis</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:25.12;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">90%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">Data Cleaning</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:25.12;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">90%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">Data Visualization</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:50.24;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">80%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">Microsoft Excel</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:50.24;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">80%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">Power BI</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:75.36;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">70%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">Python</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:62.8;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">75%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">Machine Learning</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:100.48;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">60%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">YOLOv8</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:0;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">100%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">Data Entry</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+    <div style="position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;">
+      <svg width="110" height="110" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" fill="transparent" stroke="#2a2a2a" stroke-width="8"/>
+        <circle class="progress-ring__circle" cx="50" cy="50" r="40" fill="transparent" stroke="#ff7a00" stroke-width="8" stroke-linecap="round" style="stroke-dasharray:251.2;stroke-dashoffset:50.24;"/>
+      </svg>
+      <span style="position:absolute;font-weight:800;font-size:17px;">80%</span>
+    </div>
+    <span style="font-size:13px;font-weight:600;text-align:center;color:#ccc;">Growth Analysis</span>
+  </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section style="padding:112px 5vw;" id="portfolio">
+  <div style="text-align:center;margin-bottom:56px;">
+    <div class="section-label" style="justify-content:center;margin-bottom:12px;">Work Showcase</div>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-.02em;margin-bottom:20px;">My Projects</h2>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="dashboard">Dashboard</button>
+      <button class="filter-btn" data-filter="sql">SQL</button>
+      <button class="filter-btn" data-filter="ml">ML Project</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;" id="projects-grid">
+
+    <div class="project-card" data-category="dashboard ml">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwzCnz0hd3bfwKMvmYFUbyfIYmL8t5ieCEVPTT02Nu6DuwP9nVyz1Fo39jGbtyU1e958owRx4zc112-y3wlGZjdbA97IgVMpGrHSH03sMuwe0vIS90vviGpS-ra5vJCTs8s5c5kRRe8rvD4OOYn5EsW3qOUt7IHPZ2LYqfIZ3J8A7y4_lGGnK5J0rNrG1ruf_beY2XO8bmJXsurljHxIsKxWTS9A2j1n56NRgYtrZBx9K0PUY-smzZDbzj-OWHPeXDrue6p_tF-g" alt="Crypto SIP"/>
+      <div class="project-overlay">
+        <div class="tag">Dashboard · ML</div>
+        <h4 style="color:#fff;font-size:17px;font-weight:700;line-height:1.3;">Crypto SIP User Behavior Analysis</h4>
+        <p style="color:#aaa;font-size:13px;margin-top:6px;line-height:1.6;">500-user simulated dataset. Power BI dashboard tracking engagement & growth metrics.</p>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--orange);margin-top:10px;">Power BI · Python · 2026</div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="dashboard sql">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyPvbfgLSp9TqGLmwRB4WsUvnVgeX-_HaSZMMiaOeDvYeYANICLD9Glcv7hkf8TPStj-k6f8-vd8ecNw8iXqY5UkDj2Q3t32XfHu7l3DioGGK-FpOiUYkaz-4IyAfK-ricLzSIoeeEw86JDP4XTj8MtcZ4n1oQDb68t5FaQiMHkTeehcIWJCcofjLQTlbwZPhYqeQq7Ig8a1x7GmZnL1f92v1vtpU3n8gTX0BVYM7gOSKAguU015nlecViO-H7m9FbWFubJU00hQ" alt="E-Commerce"/>
+      <div class="project-overlay">
+        <div class="tag">Dashboard · SQL</div>
+        <h4 style="color:#fff;font-size:17px;font-weight:700;line-height:1.3;">E-Commerce Sales Performance Dashboard</h4>
+        <p style="color:#aaa;font-size:13px;margin-top:6px;line-height:1.6;">Revenue trends, product performance & seasonal pattern analysis.</p>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--orange);margin-top:10px;">MySQL · Power BI · 2025</div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="ml python">
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu0WY7mwa3PBGMVrYMJPIe3KTQkYPbfkg1Xtxv-js-NnNsiqwthDG8VxQAhpUSAE28WnbPri9WUF956SU9JKpI0fKVoTakETkVQ2s3nWJWjTuLevmAmKI6TDlU25XjFi0XZ1BdE_XZHdRdgXy4sLJwprwWY7EnNxtjKYFs2zzzSJjKFVsP7wriyqY6EUMo7gocBeVZzTuMm1zKI9rjctI7CZSNrcaqDi4R8PU7EU33-UI7dljYvdO6jWGExYML6WDwcvSBxduRFA" alt="Pothole"/>
+      <div class="project-overlay">
+        <div class="tag">ML · Computer Vision</div>
+        <h4 style="color:#fff;font-size:17px;font-weight:700;line-height:1.3;">Pothole Detection System</h4>
+        <p style="color:#aaa;font-size:13px;margin-top:6px;line-height:1.6;">YOLOv8 + OpenCV system identifying potholes in images/videos with optimized accuracy.</p>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--orange);margin-top:10px;">Python · YOLOv8 · 2026 (ongoing)</div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="ml python">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1010,#2a1505);display:flex;align-items:center;justify-content:center;">
+        <span class="material-symbols-outlined" style="font-size:72px;color:rgba(255,122,0,.2);">security</span>
+      </div>
+      <div class="project-overlay">
+        <div class="tag">ML · Safety Tech</div>
+        <h4 style="color:#fff;font-size:17px;font-weight:700;line-height:1.3;">Women Safety ML System</h4>
+        <p style="color:#aaa;font-size:13px;margin-top:6px;line-height:1.6;">ML-based risk detection system with quick alert mechanisms for enhanced safety.</p>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--orange);margin-top:10px;">Python · ML · 2026 (ongoing)</div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="python sql">
+      <div style="width:100%;height:100%;background:linear-gradient(135deg,#0e1a14,#091510);display:flex;align-items:center;justify-content:center;">
+        <span class="material-symbols-outlined" style="font-size:72px;color:rgba(255,122,0,.18);">table_chart</span>
+      </div>
+      <div class="project-overlay">
+        <div class="tag">Python · Data Cleaning</div>
+        <h4 style="color:#fff;font-size:17px;font-weight:700;line-height:1.3;">City Crime Data Cleaning</h4>
+        <p style="color:#aaa;font-size:13px;margin-top:6px;line-height:1.6;">Removed duplicates, handled missing values, standardized formats in city crime datasets.</p>
+        <div style="font-family:'DM Mono',monospace;font-size:10px;color:var(--orange);margin-top:10px;">Python · Excel · 2025</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section style="padding:112px 5vw;" id="certificates">
+  <div style="margin-bottom:48px;">
+    <div class="section-label" style="margin-bottom:12px;">Credentials</div>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-.02em;">Certificates</h2>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;">
+    <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_iqnpeNR9eXgArMeid_1764792807152_completion_certificate.pdf" target="_blank" class="cert-card" style="text-decoration:none; color:inherit;">
+      <div style="width:40px;height:40px;min-width:40px;background:rgba(255,122,0,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:20px;">workspace_premium</span>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:4px;">Tata — Data Visualisation</div>
+        <div style="color:#888;font-size:13px;line-height:1.6;">Empowering Business with Effective Insights — Job Simulation</div>
+      </div>
+    </a>
+    <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_iqnpeNR9eXgArMeid_1771699920781_completion_certificate.pdf" target="_blank" class="cert-card" style="text-decoration:none; color:inherit;">
+      <div style="width:40px;height:40px;min-width:40px;background:rgba(255,122,0,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:20px;">workspace_premium</span>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:4px;">Deloitte Australia — Data Analytics</div>
+        <div style="color:#888;font-size:13px;line-height:1.6;">Data Analytics Job Simulation</div>
+      </div>
+    </a>
+    <a href="https://media.geeksforgeeks.org/courses/certificates/bbe247d8b6c5695da29326ccbc160047.pdf" target="_blank" class="cert-card" style="text-decoration:none; color:inherit;">
+      <div style="width:40px;height:40px;min-width:40px;background:rgba(255,122,0,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:20px;">workspace_premium</span>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:4px;">GeeksforGeeks — SQL</div>
+        <div style="color:#888;font-size:13px;line-height:1.6;">SQL Skill-Up Certification</div>
+      </div>
+    </a>
+    <div class="cert-card">
+      <div style="width:40px;height:40px;min-width:40px;background:rgba(255,122,0,.1);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+        <span class="material-symbols-outlined" style="color:var(--orange);font-size:20px;">workspace_premium</span>
+      </div>
+      <div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:4px;">GeeksforGeeks — Python for Data Science</div>
+        <div style="color:#888;font-size:13px;line-height:1.6;">Python for Data Science Certification</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section style="padding:112px 5vw;" id="contact">
+  <div style="text-align:center;margin-bottom:56px;">
+    <div class="section-label" style="justify-content:center;margin-bottom:12px;">Get in Touch</div>
+    <h2 style="font-size:34px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;">Contact Me</h2>
+    <p style="color:var(--text-muted);max-width:500px;margin:0 auto;font-size:16px;line-height:1.7;">Seeking a Data Science or Data Analysis internship? Let's connect.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:56px;">
+    <a href="mailto:iwasifnasim@gmail.com" style="background:var(--surface);border:1px solid var(--border);padding:22px;border-radius:6px;display:flex;align-items:center;gap:14px;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(255,122,0,.5)'" onmouseout="this.style.borderColor='var(--border)'">
+      <span class="material-symbols-outlined" style="color:var(--orange);font-size:26px;">mail</span>
+      <div><div style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.1em;color:#555;text-transform:uppercase;margin-bottom:3px;">Email</div><div style="font-size:14px;font-weight:600;color:var(--text);">iwasifnasim@gmail.com</div></div>
+    </a>
+    <a href="tel:+918669149671" style="background:var(--surface);border:1px solid var(--border);padding:22px;border-radius:6px;display:flex;align-items:center;gap:14px;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(255,122,0,.5)'" onmouseout="this.style.borderColor='var(--border)'">
+      <span class="material-symbols-outlined" style="color:var(--orange);font-size:26px;">call</span>
+      <div><div style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.1em;color:#555;text-transform:uppercase;margin-bottom:3px;">Phone</div><div style="font-size:14px;font-weight:600;color:var(--text);">+91 86691 49671</div></div>
+    </a>
+    <a href="https://www.linkedin.com/in/wasifnasim" target="_blank" style="background:var(--surface);border:1px solid var(--border);padding:22px;border-radius:6px;display:flex;align-items:center;gap:14px;text-decoration:none;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(255,122,0,.5)'" onmouseout="this.style.borderColor='var(--border)'">
+      <span class="material-symbols-outlined" style="color:var(--orange);font-size:26px;">link</span>
+      <div><div style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.1em;color:#555;text-transform:uppercase;margin-bottom:3px;">LinkedIn</div><div style="font-size:14px;font-weight:600;color:var(--text);">/in/wasifnasim</div></div>
+    </a>
+  </div>
+
+  <div style="max-width:700px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#555;">Name</label>
+        <input class="form-input" placeholder="Your Name" type="text"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#555;">Email</label>
+        <input class="form-input" placeholder="your@email.com" type="email"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#555;">Company</label>
+        <input class="form-input" placeholder="Your Company" type="text"/>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <label style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#555;">Service</label>
+        <select class="form-input">
+          <option value="">Select Service</option>
+          <option>Data Analytics</option>
+          <option>Power BI Dashboard</option>
+          <option>Machine Learning</option>
+          <option>Python Automation</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div style="grid-column:1/-1;display:flex;flex-direction:column;gap:8px;">
+        <label style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#555;">Message</label>
+        <textarea class="form-input" placeholder="Tell me about your project..." rows="4" style="resize:vertical;"></textarea>
+      </div>
+      <div style="grid-column:1/-1;text-align:center;padding-top:8px;">
+        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="alert('Thanks! Wasif will get back to you soon.')">
+          <span class="material-symbols-outlined" style="font-size:18px;">send</span>Send Message
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#0a0a0a;border-top:1px solid #1c1c1c;margin-top:80px;">
+  <div style="padding:48px 5vw;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;padding-bottom:40px;border-bottom:1px solid #181818;">
+      <div>
+        <div style="font-family:'DM Mono',monospace;font-size:14px;letter-spacing:.1em;color:var(--orange);margin-bottom:12px;">WASIF.DEV</div>
+        <p style="color:#555;font-size:14px;line-height:1.7;">AI & Data Science student passionate about data-driven decisions. Based in Nagpur, India.</p>
+      </div>
+      <div>
+        <div style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#333;margin-bottom:16px;">Contact</div>
+        <div style="color:#666;font-size:14px;line-height:2;">
+          <div>iwasifnasim@gmail.com</div>
+          <div>+91 86691 49671</div>
+          <div>Nagpur, Maharashtra, India</div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-family:'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#333;margin-bottom:16px;">Profiles</div>
+        <a href="https://www.linkedin.com/in/wasifnasim" target="_blank" style="display:block;color:#666;font-size:14px;text-decoration:none;margin-bottom:8px;transition:color .2s;" onmouseover="this.style.color='#ff7a00'" onmouseout="this.style.color='#666'">LinkedIn — /wasifnasim</a>
+        <a href="https://github.com/Wasifnasim" target="_blank" style="display:block;color:#666;font-size:14px;text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#ff7a00'" onmouseout="this.style.color='#666'">GitHub</a>
+      </div>
+    </div>
+    <div style="padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+      <p style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.08em;color:#2a2a2a;text-transform:uppercase;">© 2025 Mohammad Wasifullah Nasim. All rights reserved.</p>
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:#2a2a2a;">Nagpur · India</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('#projects-grid .project-card').forEach(card=>{
+      card.style.display=(f==='all'||card.dataset.category.includes(f))?'block':'none';
+    });
+  });
+});
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-link');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-120)cur=s.id;});
+  navLinks.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active');});
+});
+</script>
+</body>
+</html>
